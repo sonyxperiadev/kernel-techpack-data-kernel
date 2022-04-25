@@ -2,7 +2,7 @@ ifneq ($(TARGET_BOARD_AUTO),true)
 ifneq ($(TARGET_PRODUCT),qssi)
 
 RMNET_PERF_DLKM_PLATFORMS_LIST := msmnile
-RMNET_PERF_DLKM_PLATFORMS_LIST += kona
+# RMNET_PERF_DLKM_PLATFORMS_LIST += kona
 RMNET_PERF_DLKM_PLATFORMS_LIST += lito
 
 ifeq ($(call is-board-platform-in-list, $(RMNET_PERF_DLKM_PLATFORMS_LIST)),true)
@@ -20,7 +20,7 @@ ifeq ($(call is-board-platform-in-list, msmnile),true)
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../../../../kernel/msm-4.14/include/
 endif #End of check for msmnile include
 
-ifeq ($(call is-board-platform-in-list, kona),true)
+ifeq (false,true)
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../../../../kernel/msm-4.19/include/
 endif #End of check for kona include
 
