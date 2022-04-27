@@ -2,7 +2,6 @@ ifneq ($(TARGET_BOARD_AUTO),true)
 ifneq ($(TARGET_PRODUCT),qssi)
 
 RMNET_PERF_DLKM_PLATFORMS_LIST := msmnile
-RMNET_PERF_DLKM_PLATFORMS_LIST += kona
 RMNET_PERF_DLKM_PLATFORMS_LIST += lito
 
 ifeq ($(call is-board-platform-in-list, $(RMNET_PERF_DLKM_PLATFORMS_LIST)),true)
@@ -19,10 +18,6 @@ LOCAL_SRC_FILES += rmnet_perf_tcp_opt.c
 ifeq ($(call is-board-platform-in-list, msmnile),true)
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../../../../kernel/msm-4.14/include/
 endif #End of check for msmnile include
-
-ifeq ($(call is-board-platform-in-list, kona),true)
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../../../../kernel/msm-4.19/include/
-endif #End of check for kona include
 
 RMNET_PERF_BLD_DIR := ../../vendor/qcom/opensource/data-kernel/drivers/rmnet/perf
 DLKM_DIR := ./device/qcom/common/dlkm
