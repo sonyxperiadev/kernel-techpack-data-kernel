@@ -1,7 +1,6 @@
 ifneq ($(TARGET_BOARD_AUTO),true)
 ifneq ($(TARGET_PRODUCT),qssi)
 
-RMNET_PERF_DLKM_PLATFORMS_LIST := msmnile
 RMNET_PERF_DLKM_PLATFORMS_LIST += lito
 
 ifeq ($(call is-board-platform-in-list, $(RMNET_PERF_DLKM_PLATFORMS_LIST)),true)
@@ -14,10 +13,6 @@ LOCAL_MODULE := rmnet_perf.ko
 LOCAL_SRC_FILES := rmnet_perf_config.c
 LOCAL_SRC_FILES += rmnet_perf_core.c
 LOCAL_SRC_FILES += rmnet_perf_tcp_opt.c
-
-ifeq ($(call is-board-platform-in-list, msmnile),true)
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../../../../kernel/msm-4.14/include/
-endif #End of check for msmnile include
 
 RMNET_PERF_BLD_DIR := ../../vendor/qcom/opensource/data-kernel/drivers/rmnet/perf
 DLKM_DIR := ./device/qcom/common/dlkm
