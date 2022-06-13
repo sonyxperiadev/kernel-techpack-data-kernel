@@ -1,5 +1,4 @@
 ifneq ($(TARGET_PRODUCT),qssi)
-RMNET_SHS_DLKM_PLATFORMS_LIST := msmnile
 RMNET_SHS_DLKM_PLATFORMS_LIST += lito
 
 ifeq ($(call is-board-platform-in-list, $(RMNET_SHS_DLKM_PLATFORMS_LIST)),true)
